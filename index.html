@@ -1,41 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ramesh Java Quiz</title>
+    <title>Ramesh Java Advanced Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Welcome to Ramesh Java Quiz</h1>
+<div class="container">
 
-    <section>
-        <h2>📘 Java Basics</h2>
-        <p><b>What is Java?</b></p>
-        <p>Java is a high-level, object-oriented programming language used to build applications, websites, and Android apps.</p>
+    <h1>🔥 Ramesh Java Advanced Quiz</h1>
 
-        <p><b>Features of Java:</b></p>
-        <ul>
-            <li>Platform Independent</li>
-            <li>Object-Oriented</li>
-            <li>Secure</li>
-            <li>Robust</li>
-        </ul>
-    </section>
+    <!-- Difficulty Selection -->
+    <div id="level-select">
+        <h2>Select Difficulty</h2>
+        <button onclick="startQuiz('Easy')">Easy</button>
+        <button onclick="startQuiz('Medium')">Medium</button>
+        <button onclick="startQuiz('Hard')">Hard</button>
+    </div>
 
-    <section>
-        <h2>📝 Java Quiz</h2>
+    <!-- Leaderboard -->
+    <div id="leaderboard"></div>
 
-        <div id="quiz-container">
-            <p id="question">Loading question...</p>
+    <!-- Quiz Box -->
+    <div id="quiz-box" class="hidden">
 
-            <button onclick="checkAnswer('A')">A</button>
-            <button onclick="checkAnswer('B')">B</button>
-            <button onclick="checkAnswer('C')">C</button>
-            <button onclick="checkAnswer('D')">D</button>
-
-            <p id="result"></p>
+        <div class="top-bar">
+            <span id="timer">Time: 60</span>
+            <span id="score">Score: 0</span>
         </div>
-    </section>
+
+        <h2 id="question">Question loads here</h2>
+
+        <div id="options"></div>
+
+        <p id="explanation"></p>
+
+        <button onclick="nextQuestion()">Next</button>
+
+    </div>
+
+    <!-- Result Box -->
+    <div id="result-box" class="hidden">
+        <h2>🎉 Quiz Completed!</h2>
+        <p id="finalScore"></p>
+
+        <input type="text" id="username" placeholder="Enter your name">
+
+        <button onclick="saveScore()">Save Score</button>
+        <button onclick="downloadCertificate()">Download Certificate</button>
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
